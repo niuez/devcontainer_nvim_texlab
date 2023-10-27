@@ -1,0 +1,16 @@
+version: "3"
+services:
+  ubuntu-texlive-ja:
+    #image: paperist/texlive-ja:latest
+    build: .
+    command: sleep infinity
+    volumes:
+      - ../:/workdir
+      - ./.latexmkrc:/root/.latexmkrc
+      - ./nvim:/root/.config/nvim
+      - nvim:/nvim
+    environment:
+      SHELL: "/bin/bash"
+volumes:
+  nvim:
+    name: nvim
